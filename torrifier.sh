@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# restart services
+systemctl restart dnsmasq
+systemctl restart tor
+
 # destinations you don't want routed through Tor
 NON_TOR="192.168.1.0/24"
 

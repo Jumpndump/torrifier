@@ -5,8 +5,11 @@ echo 'Be sure the following are installed before continuing:
 - dnsmasq
 - tor
 '
-read -p "Press Enter to continue..."
-
+read -p "Press Y to continue, N to exit:" -n 1 -r 
+if [[ ! $REPLY =- ^[Yy]$ ]]
+then
+ exit 1
+fi
 
 # Bridge interface and NAT configuration
 echo '[+] Configuring bridge interface and NAT postrouting'

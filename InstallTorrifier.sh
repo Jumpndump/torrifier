@@ -5,9 +5,9 @@ echo 'Be sure the following are installed before continuing:
 - dnsmasq
 - tor
 '
-read -p "Press Y to continue, N to exit:" -n 1 -r 
-if [[ ! $REPLY =- ^[Yy]$ ]]
-then
+echo -n "Press Y to continue, N to exit:"
+read answer
+if [ "$answer" == "${answer#[Yy]}" ] ;then
  exit 1
 fi
 
